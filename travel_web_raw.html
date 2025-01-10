@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Travel Website</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #f0f0f0;
+            padding: 45px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            font-family: 'Poppins', sans-serif;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+        .image img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .capsules {
+            padding: 10px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .capsules span {
+            border: 1px solid gray;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            background-color: #f9f9f9;
+            font-family: 'Baloo Bhai 2', sans-serif;
+        }
+        .content {
+            padding: 15px;
+        }
+        .content h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .content p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .button {
+            text-align: center;
+            padding: 15px;
+        }
+        .button button {
+            padding: 10px 20px;
+            border-radius: 20px;
+            background-color: rgb(216, 236, 253);
+            color: rgb(14, 150, 234);
+            font-size: 14px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .button button:hover {
+            background-color: rgb(194, 225, 246);
+            color: rgb(10, 136, 214);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Card 1: Fishing -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/3880179/pexels-photo-3880179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"  alt="Fishing">
+        </div>
+        <div class="capsules">
+            <span>Fishing</span>
+            <span>Lake</span>
+        </div>
+        <div class="content">
+            <h2>Fishing Adventure</h2>
+            <p>Experience the thrill of fishing in serene lakes and rivers. Perfect for nature lovers and adventurers alike!</p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 2: Trekking -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/672358/pexels-photo-672358.jpeg" alt="Trekking">
+        </div>
+        <div class="capsules">
+            <span>Trekking</span>
+            <span>Mountains</span>
+        </div>
+        <div class="content">
+            <h2>Trekking Trails</h2>
+            <p>Explore breathtaking mountain trails and reconnect with nature on an unforgettable trekking journey.</p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 3: Swimming -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/2467325/pexels-photo-2467325.jpeg" alt="Swimming">
+        </div>
+        <div class="capsules">
+            <span>Swimming</span>
+            <span>Beach</span>
+        </div>
+        <div class="content">
+            <h2>Beach Swimming</h2>
+            <p>Dive into crystal-clear waters and soak up the sun at some of the most beautiful beaches around the world.</p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 4: Wildlife -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/247376/pexels-photo-247376.jpeg" alt="Wildlife">
+        </div>
+        <div class="capsules">
+            <span>Wildlife</span>
+            <span>Safari</span>
+        </div>
+        <div class="content">
+            <h2>Wildlife Safari</h2>
+            <p>Discover exotic wildlife and immerse yourself in the beauty of nature on an exciting safari adventure.</p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+    <!-- Card 5: Food -->
+    <div class="card"> 
+        <div class="image">
+            <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Food">
+        </div>
+        <div class="capsules">
+            <span>Food</span>
+            <span>Local Cuisine</span>
+        </div>
+        <div class="content">
+            <h2>Local Cuisine</h2>
+            <p>Savor the flavors of local dishes and indulge in the culinary delights of different cultures.</p>
+        </div>
+        <div class="button">
+            <button>Read More</button>
+        </div>
+    </div>
+
+</body>
+</html>

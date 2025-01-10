@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelOn - Your Travel Consultant</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&family=Poppins:wght@300&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        header h1 {
+            font-size: 2.5em;
+            color: #0078d7;
+        }
+        .search-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .search-container input {
+            width: 70%;
+            padding: 10px;
+            font-size: 1.1em;
+            border: 2px solid #0078d7;
+            border-radius: 5px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #005bb5;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+        nav a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #0078d7;
+            color: white;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        nav a:hover {
+            background-color: #005bb5;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background-color: white;
+            width: 250px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card .content {
+            padding: 15px;
+        }
+        .card .content h2 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #0078d7;
+        }
+        .card .content p {
+            font-size: 0.9em;
+            color: #555;
+        }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+        }
+    </style>
+    <script>
+        function searchDestination() {
+            const searchInput = document.getElementById('search-bar').value.toLowerCase();
+            const destinations = {
+                india: [
+                    { name: 'Fishing', description: 'Relax by serene lakes and enjoy fishing adventures.', image: 'https://images.pexels.com/photos/3880179/pexels-photo-3880179.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { name: 'Trekking', description: 'Explore the majestic mountains and trek through scenic trails.', image: 'https://images.pexels.com/photos/672358/pexels-photo-672358.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { name: 'Swimming', description: 'Dive into crystal-clear waters and rejuvenate your soul.', image: 'https://images.pexels.com/photos/1206560/pexels-photo-1206560.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { name: 'Wildlife', description: 'Witness the incredible diversity of wildlife in national parks.', image: 'https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' },
+                    { name: 'Food', description: 'Savor the rich flavors of traditional Indian cuisine.', image: 'https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' }
+                ]
+            };
+
+            const cardContainer = document.querySelector('.card-container');
+            cardContainer.innerHTML = '';
+
+            if (destinations[searchInput]) {
+                destinations[searchInput].forEach(activity => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <img src="${activity.image}" alt="${activity.name}">
+                        <div class="content">
+                            <h2>${activity.name}</h2>
+                            <p>${activity.description}</p>
+                        </div>
+                    `;
+                    cardContainer.appendChild(card);
+                });
+            } else {
+                cardContainer.innerHTML = '<p>No activities found for this destination.</p>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>TravelOn</h1>
+        <p>Your Ultimate Travel Consultant</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Enter your destination...">
+        <button onclick="searchDestination()">Search</button>
+    </div>
+
+    <nav>
+        <a href="https://www.makemytrip.com/">Plan Travel</a>
+        <a href="https://www.skyscanner.co.in/">Book Flights</a>
+        <a href="https://www.airbnb.co.in/?locale=en&_set_bev_on_new_domain=1736515611_EAYWU1ODUzNmJkZj">Book Hotels</a>
+        <a href="https://www.tripadvisor.in/">Travel Tips</a>
+    </nav>
+
+    <div class="card-container">
+        <!-- Cards will appear here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TravelOn. All rights reserved.</p>
+    </footer>
+</body>
+</html>
